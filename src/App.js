@@ -15,8 +15,8 @@ function App() {
   const [studentData, setStudentData] = useState("");
   const [nameSearched, setNameSearched] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [tagSearched, setTagSearched] = useState("");
-  const [tagSearchResults, setTagSearchResults] = useState([]);
+  // const [tagSearched, setTagSearched] = useState("");
+  // const [tagSearchResults, setTagSearchResults] = useState([]);
 
   useEffect(() => {
     async function getStudentContentAPI() {
@@ -66,32 +66,38 @@ function App() {
       setSearchResults(searchHits);
   }
 
-  const handleTagSearch = (tagSearch) => {
-    let tagSearchLower = tagSearch.toLowerCase();
-    let searchLength = tagSearchLower.length;
-    setTagSearched(tagSearchLower);
+  // const handleTagSearch = (tagSearch) => {
+  //   let tagSearchLower = tagSearch.toLowerCase();
+  //   let searchLength = tagSearchLower.length;
+  //   setTagSearched(tagSearchLower);
 
 
-    let myTags = document.querySelectorAll('.tags-container');
-    console.log(myTags);
-    for (let count in myTags) {
-      let tagArray = myTags[count].children;
-      for (let count in tagArray) {
-        let currTagValue = tagArray[count].innerText;
-        
-      }
-    }
-  }
+  //   let myTags = document.querySelectorAll('.tags-container');
+    
+  //   for (let count in myTags) {
+  //     let tagArray = myTags[count].children;
+  //     for (let count in tagArray) {
+  //       let currTagValue = tagArray[count].innerHTML;
+  //       if (currTagValue !== null && currTagValue !== undefined) {
+  //         if (currTagValue.slice(0, searchLength).toLowerCase() === tagSearchLower) {
+  //           console.log(myTags)
+  //         } else {
+  //           document.getElementById(count).style.display = 'none';
+  //         }
+  //       } 
+  //     }
+  //   }
+  // }
 
   return (
   <div className="body-wrapper">
     <div className='student-content-wrapper'>
       <input type='text' placeholder='Search by name' className='search' id='name-search' value={nameSearched} onChange={e => handleNameSearch(e.target.value)}></input>
-      <input type='text' placeholder='Search by tag' className='search' id='tag-search' value={tagSearched} onChange={e => handleTagSearch(e.target.value)}></input>
+      {/* <input type='text' placeholder='Search by tag' className='search' id='tag-search' value={tagSearched} onChange={e => handleTagSearch(e.target.value)}></input> */}
       <div  className='student-list'>
         {nameSearched.length === 0 ? studentData : searchResults}
 
-        {tagSearchResults}
+        {/* {tagSearchResults} */}
       </div>
     </div>
   </div>

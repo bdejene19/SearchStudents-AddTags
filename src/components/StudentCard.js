@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import TagContainer from './TagContainer';
 
 export default function StudentCard(props) {
 
@@ -22,16 +23,15 @@ export default function StudentCard(props) {
 
     const handleEnterKey = (keyboardValue) => {
         if (keyboardValue.key === 'Enter') {
-            setMyTags([...myTags, <div className='tag'>{keyboardValue.target.value}</div>]);
+            setMyTags([...myTags, keyboardValue.target.value]);
             setTagValue("");
         }
     }
     return (
-        <div>
             <div className='single-student-container'>
                 <img src={props.imgLink} alt={props.studentName} className='student-photo'></img> 
                 <div className='student-content'>
-                    <h2 className='studentName'>{props.studentName}</h2>
+                    <h1 className='studentName'><b>{props.studentName}</b></h1>
                     <div style={{textAlign: 'right', padding: '0.5em', paddingBottom: '0'}}>
 
                         {expanded === true ? <button onClick={() => handleExpansion(expanded, props.id)} className='btn-expansion'><b>-</b></button> : 
@@ -50,9 +50,7 @@ export default function StudentCard(props) {
                         </div>
                         <br></br>
                         <div className='add-tag-container'>
-                            <div className='tags-container'>
-                                {myTags}
-                            </div>
+                            <TagContainer tagArray={myTags}></TagContainer>
                             <input type='text' placeholder='Add a tag'  value={tagValue} onChange={e => setTagValue(e.target.value)} className='tag-input' onKeyPress={e => handleEnterKey(e)}></input>
                             <br></br>
                         </div>
@@ -60,6 +58,5 @@ export default function StudentCard(props) {
                    
                 </div>
             </div> 
-        </div>
     )
 }

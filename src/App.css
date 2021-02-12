@@ -30,7 +30,7 @@
   border-radius: 10px;
 }
 .student-list {
-  height: 80%;
+  height: 100%;
   overflow-y: scroll;
   border: none;
 }
@@ -40,8 +40,8 @@
   background: blue;
 }
 .studentName {
-  font-weight: 900;
-  font-style: bold;
+  font-weight: 100;
+  font-size:28px;
 }
 
 .student-content {
