@@ -38,6 +38,7 @@ function App() {
                     gradeAvgPercent={average}
                     gradeAvgArray={student.grades.map((grade, index) => <p className='test-history'>Test {index + 1}: {grade}%</p>)}
                     >
+                      
           </StudentCard>
         )
       })
