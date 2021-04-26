@@ -21,6 +21,8 @@ function App() {
   useEffect(() => {
     async function getStudentContentAPI() {
       let assessAPI = await (await fetch('https://api.hatchways.io/assessment/students')).json();
+      console.log(assessAPI)
+      console.log(assessAPI.students);
       let students = assessAPI.students;
       setStudentData(students.map((student)=> {
         let sum = 0;
