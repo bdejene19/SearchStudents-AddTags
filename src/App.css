@@ -18,9 +18,7 @@
 }
 
 .body-wrapper .student-content-wrapper {
-  justify-content: center;
   justify-self: center;;
-  align-items: center;;
   align-self: center;
   align-content: space-around;
   width: 65%;
@@ -30,7 +28,7 @@
   border-radius: 10px;
 }
 .student-list {
-  height: 100%;
+  height: 92%;
   overflow-y: scroll;
   border: none;
 }

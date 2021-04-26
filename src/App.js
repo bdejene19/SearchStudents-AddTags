@@ -67,29 +67,6 @@ function App() {
       setSearchResults(searchHits);
   }
 
-  // const handleTagSearch = (tagSearch) => {
-  //   let tagSearchLower = tagSearch.toLowerCase();
-  //   let searchLength = tagSearchLower.length;
-  //   setTagSearched(tagSearchLower);
-
-
-  //   let myTags = document.querySelectorAll('.tags-container');
-    
-  //   for (let count in myTags) {
-  //     let tagArray = myTags[count].children;
-  //     for (let count in tagArray) {
-  //       let currTagValue = tagArray[count].innerHTML;
-  //       if (currTagValue !== null && currTagValue !== undefined) {
-  //         if (currTagValue.slice(0, searchLength).toLowerCase() === tagSearchLower) {
-  //           console.log(myTags)
-  //         } else {
-  //           document.getElementById(count).style.display = 'none';
-  //         }
-  //       } 
-  //     }
-  //   }
-  // }
-
   return (
   <div className="body-wrapper">
     <div className='student-content-wrapper'>
